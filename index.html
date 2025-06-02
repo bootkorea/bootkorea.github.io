@@ -3,122 +3,257 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="bootkorea">
+    <meta name="author" content="Bu-seung So">
     <meta name="description" content="Bu-seung So의 포트폴리오 - Software Engineer, Computer Vision Researcher, Data Scientist">
     <title>Bu-seung So | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/assets/duck.png"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">Bu-seung So</a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <!-- 프로그레스 바 로딩 화면 -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="loader-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <div class="loading-text">
+                    <span class="loading-percentage">0%</span>
+                    <p>포트폴리오를 불러오는 중...</p>
+                </div>
+            </div>
+            <div class="preloader-logo">
+                <h2>Bu-seung So</h2>
+                <p>Software Engineer • Computer Vision Researcher</p>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Bu-seung So</h1>
-                    <p class="hero-subtitle">Software Engineer • Computer Vision Researcher • Data Scientist</p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="./assets/resume.pdf" download class="btn btn-secondary">Download CV</a>
+    <!-- 메인 컨테이너 -->
+    <div id="main-container" class="main-container hidden">
+        <!-- 헤더 네비게이션 -->
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <h2>Bu-seung So</h2>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="#" class="nav-link active" data-page="intro">소개</a></li>
+                        <li><a href="#" class="nav-link" data-page="portfolio">포트폴리오</a></li>
+                        <li><a href="#" class="nav-link" data-page="resume">Resume</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                    </ul>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <img src="assets/profile.jpg" alt="Bu-seung So Profile Picture" class="profile-picture">
-                </div>
+                </nav>
             </div>
-        </section>
+        </header>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>안녕하세요! 저는 소프트웨어 엔지니어이자 컴퓨터 비전 연구자, 데이터 사이언티스트로 활동하고 있습니다.</p>
-                        <p>기술을 통해 실질적인 문제를 해결하는 것에 열정을 가지고 있으며, 지속적인 학습과 혁신을 추구합니다.</p>
-                    </div>
-                    <div class="resume-embed">
-                        <object type="application/pdf" data="./assets/resume.pdf#toolbar=0" width="100%" height="600">
-                            <p>PDF를 표시할 수 없습니다. <a href="./assets/resume.pdf">이력서 다운로드</a></p>
-                        </object>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <div class="project-image">
-                            <img src="assets/project1.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <h3>Project Title 1</h3>
-                            <p>프로젝트에 대한 간단한 설명을 여기에 작성합니다.</p>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">ML</span>
+        <!-- 메인 콘텐츠 영역 -->
+        <main class="main-content">
+            <!-- 소개 페이지 -->
+            <section id="intro-page" class="page-section active">
+                <div class="intro-container">
+                    <div class="intro-content">
+                        <div class="profile-section">
+                            <div class="profile-image">
+                                <img src="assets/profile.jpg" alt="Bu-seung So Profile" class="profile-picture">
+                                <div class="profile-status">
+                                    <span class="status-indicator"></span>
+                                    <span>Available for work</span>
+                                </div>
                             </div>
-                            <a href="#" class="project-link">View Details</a>
-                        </div>
-                    </article>
-                    <!-- 추가 프로젝트 카드들 -->
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills">
-            <div class="container">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
-                        <div class="skill-items">
-                            <span class="skill-item">Python</span>
-                            <span class="skill-item">JavaScript</span>
-                            <span class="skill-item">C++</span>
+                            <div class="profile-info">
+                                <h1 class="profile-name">Bu-seung So</h1>
+                                <p class="profile-title">Software Engineer • Computer Vision Researcher • Data Scientist</p>
+                                <div class="profile-description">
+                                    <p>안녕하세요! 저는 소프트웨어 엔지니어이자 컴퓨터 비전 연구자, 데이터 사이언티스트로 활동하고 있습니다.</p>
+                                    <p>기술을 통해 실질적인 문제를 해결하는 것에 열정을 가지고 있으며, 지속적인 학습과 혁신을 추구합니다.</p>
+                                </div>
+                                <div class="profile-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-number">5+</span>
+                                        <span class="stat-label">Years Experience</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">20+</span>
+                                        <span class="stat-label">Projects Completed</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-number">100%</span>
+                                        <span class="stat-label">Client Satisfaction</span>
+                                    </div>
+                                </div>
+                                <div class="profile-actions">
+                                    <button class="btn btn-primary" data-page="portfolio">포트폴리오 보기</button>
+                                    <button class="btn btn-secondary" data-page="contact">연락하기</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- 추가 스킬 카테고리들 -->
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-content">
-                    <p>프로젝트 협업이나 채용 문의는 언제든 환영합니다!</p>
-                    <a href="mailto:contact@example.com" class="btn btn-primary">Get In Touch</a>
+            <!-- 포트폴리오 페이지 -->
+            <section id="portfolio-page" class="page-section">
+                <div class="portfolio-container">
+                    <div class="page-header">
+                        <h1>포트폴리오</h1>
+                        <p>제가 진행한 주요 프로젝트들을 소개합니다.</p>
+                    </div>
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">전체</button>
+                        <button class="filter-btn" data-filter="web">웹 개발</button>
+                        <button class="filter-btn" data-filter="ai">AI/ML</button>
+                        <button class="filter-btn" data-filter="research">연구</button>
+                    </div>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="web">
+                            <div class="portfolio-image">
+                                <img src="assets/project1.jpg" alt="프로젝트 1">
+                                <div class="portfolio-overlay">
+                                    <button class="portfolio-btn">자세히 보기</button>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h3>웹 애플리케이션 프로젝트</h3>
+                                <p>React와 Node.js를 활용한 풀스택 개발</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">React</span>
+                                    <span class="tag">Node.js</span>
+                                    <span class="tag">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 추가 포트폴리오 아이템들 -->
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Bu-seung So. All rights reserved.</p>
-        </div>
-    </footer>
+            <!-- Resume 페이지 -->
+            <section id="resume-page" class="page-section">
+                <div class="resume-container">
+                    <div class="page-header">
+                        <h1>Resume</h1>
+                        <p>자세한 이력과 경험을 확인하세요.</p>
+                        <a href="./assets/resume.pdf" download class="btn btn-primary">
+                            <i class="fas fa-download"></i> CV 다운로드
+                        </a>
+                    </div>
+                    <div class="resume-content">
+                        <div class="resume-sidebar">
+                            <div class="resume-section">
+                                <h3>기술 스택</h3>
+                                <div class="skills-list">
+                                    <div class="skill-item">
+                                        <span class="skill-name">Python</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">JavaScript</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <!-- 추가 스킬들 -->
+                                </div>
+                            </div>
+                            <div class="resume-section">
+                                <h3>언어</h3>
+                                <div class="languages">
+                                    <div class="language-item">
+                                        <span>한국어</span>
+                                        <span class="level">Native</span>
+                                    </div>
+                                    <div class="language-item">
+                                        <span>English</span>
+                                        <span class="level">Fluent</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-main">
+                            <div class="resume-viewer">
+                                <object type="application/pdf" data="./assets/resume.pdf#toolbar=0" width="100%" height="800">
+                                    <p>PDF를 표시할 수 없습니다. <a href="./assets/resume.pdf">이력서 다운로드</a></p>
+                                </object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact 페이지 -->
+            <section id="contact-page" class="page-section">
+                <div class="contact-container">
+                    <div class="page-header">
+                        <h1>Contact</h1>
+                        <p>프로젝트 협업이나 채용 문의는 언제든 환영합니다!</p>
+                    </div>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>이메일</h3>
+                                    <p>contact@buseungso.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>LinkedIn</h3>
+                                    <p>linkedin.com/in/buseungso</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>GitHub</h3>
+                                    <p>github.com/bootkorea</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name">이름</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">이메일</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">제목</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">메시지</label>
+                                    <textarea id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">메시지 보내기</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
