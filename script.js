@@ -81,10 +81,32 @@ class PortfolioApp {
         const targetPageElement = document.getElementById(`${targetPage}-page`);
         if (targetPageElement) {
             targetPageElement.classList.add('active');
+            
+            // 스킬 바 애니메이션 트리거 (소개 페이지일 때)
+            if (targetPage === 'intro') {
+                setTimeout(() => {
+                    this.animateSkillBars();
+                }, 300);
+            }
         }
 
         // 스크롤을 맨 위로
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 스킬 바 애니메이션 메소드 추가
+    animateSkillBars() {
+        const skillBars = document.querySelectorAll('.skill-progress');
+        skillBars.forEach((bar, index) => {
+            setTimeout(() => {
+                bar.style.transition = 'width 1.5s ease';
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            }, index * 100);
+        });
     }
 
     // 활성 네비게이션 설정
