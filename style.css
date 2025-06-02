@@ -406,6 +406,20 @@ body {
     color: var(--text-primary);
 }
 
+.experience-item .responsibilities p {
+    line-height: 1.6;
+    margin: 0.5rem 0;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.experience-item .responsibilities p::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
 .period {
     color: var(--primary-color);
     font-weight: 500;
@@ -444,6 +458,12 @@ body {
     gap: 2rem;
 }
 
+.skills-category {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+}
+
 .skills-category h3 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -458,6 +478,8 @@ body {
     background: white;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease;
 }
 
 .activity-header {
@@ -477,6 +499,10 @@ body {
     color: var(--primary-color);
     font-weight: 500;
     font-size: 0.9rem;
+}
+
+.activity-item:hover {
+    transform: translateY(-3px);
 }
 
 /* 버튼 스타일 */
