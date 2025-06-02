@@ -748,6 +748,82 @@ body {
     transition: width 1s ease;
 }
 
+/* 기술 레이더 차트 스타일 */
+.skill-radar {
+    background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+/* 인증서 카드 호버 효과 */
+.cert-card:hover {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+
+/* 프로젝트 기술 스택 태그 */
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.stack-item {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+}
+
+.stack-item.django { 
+    --tag-bg: #092e20;
+    --tag-text: #fff;
+}
+
+/* Certifications 섹션 스타일 추가 */
+.about-section.certifications-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cert-card {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.cert-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-info .issuer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-info .date {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+}
+
+
 .languages {
     display: flex;
     flex-direction: column;
@@ -959,6 +1035,18 @@ body {
     
     .portfolio-filters {
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-stack {
         justify-content: center;
     }
 }

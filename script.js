@@ -260,3 +260,32 @@ window.addEventListener('scroll', () => {
         header.style.boxShadow = 'none';
     }
 });
+
+// 기술 레이더 차트 초기화
+const skillData = {
+    labels: ['Python', 'Django', 'AWS', 'PyTorch', 'SQL'],
+    datasets: [{
+        label: '기술 숙련도',
+        data: [90, 85, 80, 75, 70],
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
+        pointRadius: 5
+    }]
+};
+
+new Chart(document.getElementById('skillRadarChart'), {
+    type: 'radar',
+    data: skillData,
+    options: {
+        scales: {
+            r: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                    stepSize: 20,
+                    color: '#666'
+                }
+            }
+        }
+    }
+});

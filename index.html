@@ -42,8 +42,8 @@
                 <nav class="navigation">
                     <ul class="nav-menu">
                         <li><a href="#" class="nav-link active" data-page="intro">Home</a></li>
-                        <li><a href="#" class="nav-link" data-page="about">소개</a></li>
-                        <li><a href="#" class="nav-link" data-page="portfolio">포트폴리오</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-page="portfolio">Portfolio</a></li>
                         <li><a href="#" class="nav-link" data-page="resume">Resume</a></li>
                         <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
                     </ul>
@@ -122,6 +122,23 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Education 섹션 -->
+                    <div class="education-timeline">
+                        <h2>Education</h2>
+                        <div class="timeline-item">
+                            <!-- 전북대학교 컴퓨터공학부 학사 -->
+                            <div class="timeline-point"></div>
+                            <div class="timeline-content">
+                                <h4>전북대학교 컴퓨터공학부</h4>
+                                <p class="timeline-date">2019.03 - 2025.02</p>
+                                <div class="gpa-meter">
+                                    <div class="gpa-fill" style="width: 84.2%;"></div>
+                                    <span class="gpa-text">3.79/4.5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Experiences 섹션 -->
                     <div class="about-section">
@@ -136,6 +153,15 @@
                                 <p class="company">㈜가비아 - 클라우드기획팀</p>
                                 <div class="responsibilities">
                                     <p>Gen2 클라우드 서비스 기획 보조 및 QA 분석을 통한 UI/UX 개선안 도출[1]. 사용자 매뉴얼 작성과 도큐멘테이션 관리 수행[1]. Figma와 Confluence를 활용한 프로토타이핑 및 협업[5].</p>
+                                <div class="tech-tags">
+                                    <span class="tag">Figma</span>
+                                    <span class="tag">Confluence</span>
+                                    <span class="tag">JIRA</span>
+                                </div>
+                                    <p class="achievement">
+                                        <span class="highlight">Gen2 서비스 UI/UX 개선안 12건 제안</span> 및 
+                                        <span class="highlight">사용자 매뉴얼 3종 개발</span>
+                                    </p>
                                 </div>
                             </div>
 
@@ -176,6 +202,11 @@
                                 </div>
                             </div>
 
+                            <!-- 기술 스택 시각화 -->
+                            <div class="skill-radar">
+                                <canvas id="skillRadarChart"></canvas>
+                            </div>
+
                             <!-- 클라우드 및 DevOps -->
                             <div class="skills-category">
                                 <h3>클라우드 인프라</h3>
@@ -192,6 +223,30 @@
                                             <div class="skill-progress" style="width: 75%;"></div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications 섹션 추가 -->
+                    <div class="about-section">
+                        <h2>Certifications</h2>
+                        <div class="certifications-content">
+                            <div class="cert-card">
+                                <img src="assets/aws-certified.png" alt="AWS Certified">
+                                <div class="cert-info">
+                                    <h3>AWS Certified Cloud Practitioner</h3>
+                                    <p class="issuer">Amazon Web Services</p>
+                                    <p class="date">2025.04 - 2028.04</p>
+                                </div>
+                            </div>
+                            
+                            <div class="cert-card">
+                                <img src="assets/sql-d.png" alt="SQLD Certified">
+                                <div class="cert-info">
+                                    <h3>SQL Developer (SQLD)</h3>
+                                    <p class="issuer">한국데이터베이스진흥원</p>
+                                    <p class="date">2024.04 - 무기한</p>
                                 </div>
                             </div>
                         </div>
@@ -255,6 +310,34 @@
                             </div>
                         </div>
                         <!-- 추가 포트폴리오 아이템들 -->
+                         <div class="project-card">
+                            <div class="project-header">
+                                <h3>Litmus 플랫폼 리뉴얼</h3>
+                                <div class="project-meta">
+                                    <span class="duration">5개월</span>
+                                    <span class="team-size">8인 팀</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <div class="tech-stack">
+                                    <span class="stack-item django">Django</span>
+                                    <span class="stack-item openstack">OpenStack</span>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">40%</span>
+                                        <span class="stat-label">기여도</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">500+</span>
+                                        <span class="stat-label">활성 사용자</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/bootkorea/litmus-renewal" class="github-link">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -329,7 +412,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <h3>이메일</h3>
-                                    <p>contact@buseungso.com</p>
+                                    <p>alphasobs@gmail.com</p>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -338,7 +421,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <h3>LinkedIn</h3>
-                                    <p>linkedin.com/in/buseungso</p>
+                                    <p>www.linkedin.com/in/buseung-so-952bb92a8/</p>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -347,7 +430,7 @@
                                 </div>
                                 <div class="contact-details">
                                     <h3>GitHub</h3>
-                                    <p>github.com/bootkorea</p>
+                                    <p>www.github.com/bootkorea</p>
                                 </div>
                             </div>
                         </div>
