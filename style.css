@@ -30,7 +30,6 @@ html {
 }
 
 body {
-    padding-top: 5%;
     min-height: 100svh;
     min-height: -webkit-fill-available;
 }
@@ -211,7 +210,6 @@ body {
 .main-content {
     /* margin-top: 80px; */
     /* min-height: calc(100svh - 80px); */
-    padding-top: 5%;
     min-height: calc(100svh);
 }
 
