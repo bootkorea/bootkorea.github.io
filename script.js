@@ -105,6 +105,7 @@ class PortfolioApp {
         });
     }
 
+
     // 모바일 메뉴 설정[11]
     setupMobileMenu() {
         const mobileToggle = document.querySelector('.mobile-menu-toggle');
@@ -235,6 +236,37 @@ document.addEventListener('DOMContentLoaded', () => {
     new PortfolioFilter();
     new SkillsAnimation();
     new SmoothScroll();
+
+    // bootkorea 로고 클릭 시 홈으로 이동
+    const logoHome = document.getElementById('logo-home');
+    if (logoHome) {
+        logoHome.style.cursor = 'pointer';
+        logoHome.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 페이지 전환 함수가 있다면 사용 (예: switchPage('intro'))
+            if (typeof app !== 'undefined' && typeof app.switchPage === 'function') {
+                app.switchPage('intro');
+                app.setActiveNavByPage('intro');
+            } else {
+                // 기본 수동 처리
+                document.querySelectorAll('.page-section').forEach(page => {
+                    page.classList.remove('active');
+                });
+                const introPage = document.getElementById('intro-page');
+                if (introPage) introPage.classList.add('active');
+
+                // 네비게이션 active 처리
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.page === 'intro') link.classList.add('active');
+                });
+
+                // 스크롤 맨 위로
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
 });
 
 // 브라우저 리사이즈 이벤트 처리

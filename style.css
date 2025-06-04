@@ -209,14 +209,13 @@ body {
 /* 메인 콘텐츠 */
 .main-content {
     /* margin-top: 80px; */
-    /* min-height: calc(100svh - 80px); */
-    min-height: 100svh;
+    min-height: calc(100svh - 80px);
 }
 
 /* 페이지 섹션 */
 .page-section {
     display: none;
-    min-height: 100svh;
+    min-height: calc(100svh - 80px);
     padding: 2rem 0;
     animation: fadeInUp 0.6s ease forwards;
 }
@@ -227,10 +226,7 @@ body {
 
 /* 소개 페이지 */
 #intro-page {
-    height: 100svh;
-    height: 100svh;
-    height: 100svh;
-    height: 100svh;
+    height: calc(100svh - 80px);
     /* min-height: 600px; */
     overflow: hidden;
     position: relative;
