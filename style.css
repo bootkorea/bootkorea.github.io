@@ -30,7 +30,8 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    padding-top: 5%;
+    min-height: 100svh;
     min-height: -webkit-fill-available;
 }
 
@@ -245,10 +246,12 @@ body {
     justify-content: center;
     align-items: center;
     
-    /* 보라색 그라데이션 배경 */
-    background: linear-gradient(135deg, #8B45AC 0%, #B565D8 50%, #8B45AC 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease-in-out infinite;
+    /* 배경 이미지 적용 */
+    background-image: url('assets/background.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .hero-content {
@@ -275,7 +278,7 @@ body {
     line-height: 1.6;
     margin-bottom: 3rem;
     opacity: 0.95;
-    max-width: 600px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -645,15 +648,16 @@ body {
 /* Secondary CTA - Contact */
 .btn-secondary {
     background-color: transparent;
-    color: white;
+    color: black;
     border-color: white;
+    background-color: white;
 }
 
 .btn-secondary:hover {
-    background-color: white;
+    background-color: rgb(212, 212, 212);
     color: var(--primary-color);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgb(200, 200, 200);
 }
 
 /* 통계 섹션 하단 배치 */
