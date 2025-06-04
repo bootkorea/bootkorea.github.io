@@ -389,16 +389,3 @@ function validateAndSendEmail(event) {
     
     return true;
 }
-
-// 기존 setupContactForm 함수를 아래와 같이 수정
-class PortfolioApp {
-    // ... 기존 코드 ...
-    
-    setupContactForm() {
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            // onsubmit 이벤트는 HTML에서 처리하므로 여기서는 제거
-            console.log('Contact form initialized');
-        }
-    }
-}
