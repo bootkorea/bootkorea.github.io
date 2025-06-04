@@ -25,12 +25,22 @@
     box-sizing: border-box;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: var(--text-primary);
     background: var(--bg-primary);
     overflow-x: hidden;
+    min-height: -webkit-fill-available;
 }
 
 /* 프리로더 스타일 */
@@ -216,6 +226,67 @@ body {
 }
 
 /* 소개 페이지 */
+#intro-page {
+    height: 100vh;
+    height: 100dvh; /* 동적 뷰포트 지원 */
+    height: calc(100svh - 80px);
+    height: calc(100dvh - 80px);
+    /* min-height: 600px; */
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* 보라색 그라데이션 배경 */
+    background: linear-gradient(135deg, #8B45AC 0%, #B565D8 50%, #8B45AC 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease-in-out infinite;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .intro-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -251,7 +322,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.profile-status {
+/* .profile-status {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -261,15 +332,15 @@ body {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 500;
-}
+} */
 
-.status-indicator {
+/* .status-indicator {
     width: 8px;
     height: 8px;
     background: white;
     border-radius: 50%;
     animation: pulse 2s infinite;
-}
+} */
 
 .profile-info {
     text-align: left;
@@ -507,7 +578,7 @@ body {
 }
 
 /* 버튼 스타일 */
-.btn {
+/* .btn {
     padding: 0.75rem 2rem;
     border-radius: var(--border-radius);
     text-decoration: none;
@@ -541,7 +612,83 @@ body {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: white;
+} */
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    min-width: 160px;
+    text-align: center;
 }
+
+/* Primary CTA - 포트폴리오 보기 */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2563eb;
+    border-color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+/* Secondary CTA - Contact */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border-color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* 통계 섹션 하단 배치 */
+.stats-section {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 3rem;
+    color: white;
+    z-index: 2;
+}
+
+.stat-item {
+    text-align: center;
+    opacity: 0.9;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+
 
 /* 페이지 헤더 */
 .page-header {
@@ -1005,6 +1152,37 @@ body {
 }
 
 @media (max-width: 768px) {
+    #intro-page {
+        height: 100vh;
+        height: 100svh; /* 모바일에서 더 안전한 뷰포트 */
+        height: calc(100vh - 60px);
+        height: calc(100svh - 60px);
+    }
+    
+    .hero-container {
+        padding: 0 1rem;
+    }
+    
+    .hero-content {
+        margin-bottom: 2rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 4vw, 1.3rem);
+        margin-bottom: 2rem;
+    }
+    
+    .stats-section {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
     .header-container {
         padding: 1rem;
     }
@@ -1059,6 +1237,32 @@ body {
     .contact-container {
         padding: 1rem;
     }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0;
+    }
+    
+    .stats-section {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
     
     .profile-picture {
         width: 200px;
@@ -1076,14 +1280,4 @@ body {
     .preloader-logo h2 {
         font-size: 2rem;
     }
-}
-
-
-html {
-    height: -webkit-fill-available;
-}
-
-body {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
 }
