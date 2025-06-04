@@ -321,3 +321,84 @@ new Chart(document.getElementById('skillRadarChart'), {
         }
     }
 });
+
+// 4. 유효성 검사 및 이메일 전송 함수 추가
+function validateAndSendEmail(event) {
+    event.preventDefault();
+    
+    // 필드 값 가져오기
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // 필수 필드 검사
+    if (!name) {
+        alert('이름을 입력해주세요.');
+        document.getElementById('name').focus();
+        return false;
+    }
+    
+    if (!email) {
+        alert('이메일을 입력해주세요.');
+        document.getElementById('email').focus();
+        return false;
+    }
+    
+    if (!subject) {
+        alert('제목을 입력해주세요.');
+        document.getElementById('subject').focus();
+        return false;
+    }
+    
+    if (!message) {
+        alert('메시지를 입력해주세요.');
+        document.getElementById('message').focus();
+        return false;
+    }
+    
+    // 이메일 형식 검사
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('유효한 이메일 주소를 입력해주세요.');
+        document.getElementById('email').focus();
+        return false;
+    }
+    
+    // mailto 링크 생성 및 실행
+    const mailtoSubject = encodeURIComponent(`[포트폴리오 문의] ${subject}`);
+    const mailtoBody = encodeURIComponent(
+        `보낸 사람: ${name}\n` +
+        `이메일: ${email}\n` +
+        `제목: ${subject}\n\n` +
+        `메시지:\n${message}\n\n` +
+        `---\n` +
+        `이 메시지는 포트폴리오 웹사이트에서 전송되었습니다.`
+    );
+    
+    const mailtoLink = `mailto:alphasobs@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    
+    // 메일 클라이언트 열기
+    window.location.href = mailtoLink;
+    
+    // 성공 메시지 표시
+    alert('메일 클라이언트가 열렸습니다. 메시지를 확인하고 전송해주세요.');
+    
+    // 폼 초기화
+    document.getElementById('contact-form').reset();
+    
+    return true;
+}
+
+// 기존 setupContactForm 함수를 아래와 같이 수정
+class PortfolioApp {
+    // ... 기존 코드 ...
+    
+    setupContactForm() {
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            // onsubmit 이벤트는 HTML에서 처리하므로 여기서는 제거
+            console.log('Contact form initialized');
+        }
+    }
+}

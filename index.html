@@ -425,7 +425,7 @@
             </section>
 
             <!-- Contact 페이지 -->
-            <section id="contact-page" class="page-section">
+            <!-- <section id="contact-page" class="page-section">
                 <div class="contact-container">
                     <div class="page-header">
                         <h1>Contact</h1>
@@ -484,7 +484,73 @@
                         </div>
                     </div>
                 </div>
+            </section> -->
+            
+            <!-- Contact 페이지 -->
+            <section id="contact-page" class="page-section">
+                <div class="contact-container">
+                    <div class="page-header">
+                        <p></p>
+                        <h1>Contact</h1>
+                        <p>프로젝트 협업이나 채용 문의는 아래로 연락해주세요.</p>
+                    </div>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>이메일</h3>
+                                    <p><a href="mailto:alphasobs@gmail.com">alphasobs@gmail.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>LinkedIn</h3>
+                                    <p><a href="https://www.linkedin.com/in/buseung-so-952bb92a8/" target="_blank" rel="noopener">www.linkedin.com/in/buseung-so-952bb92a8/</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h3>GitHub</h3>
+                                    <p><a href="https://github.com/bootkorea" target="_blank" rel="noopener">www.github.com/bootkorea</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contact-form" onsubmit="return validateAndSendEmail(event)">
+                                <div class="form-group">
+                                    <label for="name">이름</label>
+                                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">이메일</label>
+                                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">제목</label>
+                                    <input type="text" id="subject" name="subject" placeholder="제목을 입력하세요" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">메시지</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="메시지를 입력하세요" required></textarea>
+                                </div>
+                                <div class="form-button-container">
+                                    <button type="submit" class="btn btn-primary">보내기</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </section>
+
         </main>
     </div>
 
