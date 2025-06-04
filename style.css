@@ -986,6 +986,9 @@ body {
     border-radius: var(--border-radius);
     padding: 1.5rem;
     transition: transform 0.3s ease;
+    min-height: 200px; /* 카드 높이 통일 */
+    display: flex;
+    flex-direction: column;
 }
 
 .cert-card:hover {
@@ -999,19 +1002,30 @@ body {
     margin-bottom: 1rem;
 }
 
+.cert-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 .cert-info h3 {
     font-size: 1.1rem;
     margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .cert-info .issuer {
     color: var(--text-secondary);
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 .cert-info .date {
     font-size: 0.85rem;
     color: var(--primary-color);
+    font-weight: 500;
+    margin-top: auto; /* 날짜를 카드 하단에 고정 */
 }
 
 
