@@ -363,43 +363,33 @@
                         <h1>포트폴리오</h1>
                         <p>참여한 주요 프로젝트를 소개합니다.</p>
                     </div>
+                    
                     <div class="portfolio-filters">
                         <button class="filter-btn active" data-filter="all">전체</button>
                         <button class="filter-btn" data-filter="web">웹 개발</button>
                         <button class="filter-btn" data-filter="ai">AI/ML</button>
                         <button class="filter-btn" data-filter="research">연구</button>
                     </div>
+                    
                     <div class="portfolio-grid">
-                        <div class="portfolio-item" data-category="web">
-                            <div class="portfolio-image">
-                                <img src="assets/project1.jpg" alt="프로젝트 1">
-                                <div class="portfolio-overlay">
-                                    <button class="portfolio-btn">자세히 보기</button>
-                                </div>
-                            </div>
-                            <div class="portfolio-info">
-                                <h3>웹 애플리케이션 프로젝트</h3>
-                                <p>React와 Node.js를 활용한 풀스택 개발</p>
-                                <div class="portfolio-tags">
-                                    <span class="tag">React</span>
-                                    <span class="tag">Node.js</span>
-                                    <span class="tag">MongoDB</span>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 추가 포트폴리오 아이템들 -->
-                         <div class="project-card">
+                        <!-- 프로젝트 1: Litmus 플랫폼 리뉴얼 -->
+                        <div class="project-card" data-category="web">
                             <div class="project-header">
-                                <h3>Litmus 플랫폼 리뉴얼</h3>
+                                <h3>SW 교육 플랫폼(Litmus) 리뉴얼</h3>
                                 <div class="project-meta">
                                     <span class="duration">5개월</span>
                                     <span class="team-size">8인 팀</span>
                                 </div>
                             </div>
                             <div class="project-body">
+                                <p class="project-description">
+                                    클라우드 테스트 플랫폼의 사용자 경험 개선과 성능 최적화를 위한 전면 리뉴얼 프로젝트
+                                </p>
                                 <div class="tech-stack">
                                     <span class="stack-item django">Django</span>
                                     <span class="stack-item openstack">OpenStack</span>
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">PostgreSQL</span>
                                 </div>
                                 <div class="project-stats">
                                     <div class="stat-item">
@@ -411,7 +401,41 @@
                                         <span class="stat-label">활성 사용자</span>
                                     </div>
                                 </div>
-                                <a href="https://github.com/bootkorea/litmus-renewal" class="github-link">
+                                <a href="https://github.com/bootkorea/litmus-renewal" class="github-link" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> View on GitHub
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 프로젝트 2: AI 이미지 분석 시스템 -->
+                        <div class="project-card" data-category="ai">
+                            <div class="project-header">
+                                <h3>AI 이미지 분석 시스템</h3>
+                                <div class="project-meta">
+                                    <span class="duration">4개월</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    딥러닝을 활용한 실시간 이미지 분석 및 객체 인식 시스템 개발
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">PyTorch</span>
+                                    <span class="stack-item">FastAPI</span>
+                                    <span class="stack-item">Docker</span>
+                                    <span class="stack-item">AWS</span>
+                                </div>
+                                <div class="project-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-value">60%</span>
+                                        <span class="stat-label">기여도</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-value">1.2K+</span>
+                                        <span class="stat-label">활성 사용자</span>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/bootkorea/ai-image-analysis" class="github-link" target="_blank" rel="noopener">
                                     <i class="fab fa-github"></i> View on GitHub
                                 </a>
                             </div>
