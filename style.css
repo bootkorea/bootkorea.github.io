@@ -198,8 +198,9 @@ body {
 
 /* 메인 콘텐츠 */
 .main-content {
-    margin-top: 80px;
-    min-height: calc(100svh - 80px);
+    /* margin-top: 80px; */
+    /* min-height: calc(100svh - 80px); */
+    min-height: calc(100svh);
 }
 
 /* 페이지 섹션 */
