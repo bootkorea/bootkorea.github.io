@@ -408,7 +408,7 @@ body {
 /* Education 페이지 스타일 */
 .education-timeline {
     margin-bottom: 4rem;
-    padding: 2rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--border-color);
 }
 
