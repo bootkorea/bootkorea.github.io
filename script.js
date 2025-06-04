@@ -145,12 +145,11 @@ class PortfolioApp {
     }
 }
 
-// 포트폴리오 필터 기능
+// PortfolioFilter 클래스 수정 - 기존 클래스를 완전히 교체
 class PortfolioFilter {
     constructor() {
         this.filterButtons = document.querySelectorAll('.filter-btn');
-        this.portfolioItems = document.querySelectorAll('.portfolio-item');
-        
+        this.projectCards = document.querySelectorAll('.project-card'); // .portfolio-item → .project-card로 변경
         this.init();
     }
 
@@ -158,21 +157,21 @@ class PortfolioFilter {
         this.filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const filter = button.dataset.filter;
-                this.filterPortfolio(filter);
+                this.filterProjects(filter);
                 this.setActiveFilter(button);
             });
         });
     }
 
-    filterPortfolio(filter) {
-        this.portfolioItems.forEach(item => {
-            const category = item.dataset.category;
+    filterProjects(filter) {
+        this.projectCards.forEach(card => {
+            const category = card.dataset.category;
             
             if (filter === 'all' || category === filter) {
-                item.style.display = 'block';
-                item.style.animation = 'fadeInUp 0.6s ease forwards';
+                card.style.display = 'block';
+                card.style.animation = 'fadeInUp 0.6s ease forwards';
             } else {
-                item.style.display = 'none';
+                card.style.display = 'none';
             }
         });
     }
