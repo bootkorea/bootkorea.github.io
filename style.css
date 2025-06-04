@@ -405,27 +405,6 @@ body {
     gap: 1rem;
 }
 
-
-/* Education 페이지 스타일 */
-.education-timeline {
-    margin-bottom: 4rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.education-timeline:last-child {
-    border-bottom: none;
-}
-
-.education-timeline h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: var(--primary-color);
-}
-
-
-
 /* 소개 페이지 스타일 */
 .about-container {
     max-width: 1200px;
