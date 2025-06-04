@@ -1045,7 +1045,8 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: flex-start; /* 상단 정렬로 균형 맞춤 */
+    align-items: stretch; /* 양쪽 높이를 동일하게 맞춤 */
+    min-height: 500px; /* 최소 높이 설정 */
 }
 
 .contact-info {
@@ -1053,26 +1054,51 @@ body {
     flex: 1;
     flex-direction: column;
     gap: 2rem;
+    justify-content: center; /* 세로 중앙 정렬 */
+    gap: 2rem; /* contact-item 간격 조정 */
 }
 
 .contact-form {
-    flex: 1; /* 양쪽 섹션에 동일한 비율 부여 */
+    flex: 1;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 폼도 세로 중앙 정렬 */
 }
 
-/* 3. 보내기 버튼 중앙 정렬 */
+/* 보내기 버튼 완전 중앙 정렬 */
 .form-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    align-items: center;
+    margin-top: auto; /* 폼 하단에 고정 */
+    padding-top: 1rem;
 }
 
 .form-button-container .btn {
-    min-width: 150px;
-    padding: 0.875rem 2rem;
+    min-width: 180px;
+    padding: 1rem 2rem;
     font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
 }
 
-.contact-item {
+.form-button-container .btn:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* .contact-item {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -1081,11 +1107,24 @@ body {
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     transition: var(--transition);
+} */
+ /* Contact 아이템 스타일 개선 */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
 }
 
 .contact-item:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .contact-icon {
@@ -1098,6 +1137,7 @@ body {
     justify-content: center;
     color: white;
     font-size: 1.5rem;
+    flex-shrink: 0; /* 아이콘 크기 고정 */
 }
 
 .contact-details a {
@@ -1124,6 +1164,8 @@ body {
 }
 
 .contact-form {
+    display: flex;
+    flex-direction: column;
     background: white;
     padding: 2rem;
     border-radius: var(--border-radius);
@@ -1135,11 +1177,18 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+} */
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
     color: var(--text-primary);
+    font-size: 0.95rem;
 }
 
 .form-group input,
@@ -1158,6 +1207,9 @@ body {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.form-group:last-of-type {
+    margin-bottom: 2rem; /* 마지막 폼 그룹과 버튼 사이 간격 */
 }
 
 /* 애니메이션 */
@@ -1289,10 +1341,27 @@ body {
     .contact-content {
         flex-direction: column;
         gap: 2rem;
+        align-items: stretch;
     }
     
+    .contact-info {
+        justify-content: flex-start; /* 모바일에서는 위부터 시작 */
+        gap: 1.5rem;
+    }
+
     .contact-form {
         padding: 1.5rem;
+        justify-content: flex-start; /* 모바일에서는 위부터 시작 */
+    }
+
+    .contact-item {
+        padding: 1rem;
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
 
