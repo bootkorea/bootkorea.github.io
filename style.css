@@ -974,6 +974,7 @@ body {
 }
 
 /* Certifications 섹션 스타일 추가 */
+.certifications-container, 
 .about-section.certifications-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
