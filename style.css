@@ -219,7 +219,7 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 2rem;
-    height: calc(100vh - 80px);
+    height: calc(100svh - 80px);
     display: flex;
     align-items: center;
 }
@@ -1075,4 +1075,14 @@ body {
     .preloader-logo h2 {
         font-size: 2rem;
     }
+}
+
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
