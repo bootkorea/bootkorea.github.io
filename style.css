@@ -977,8 +977,8 @@ body {
 .certifications-container, 
 .about-section.certifications-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
     margin-top: 2rem;
 }
 
@@ -987,13 +987,9 @@ body {
     border-radius: var(--border-radius);
     padding: 1.5rem;
     transition: transform 0.3s ease;
-    min-height: 200px; /* 카드 높이 통일 */
+    min-height: 200px;
     display: flex;
     flex-direction: column;
-}
-
-.cert-card:hover {
-    transform: translateY(-5px);
 }
 
 .cert-card img {
@@ -1395,6 +1391,15 @@ body {
         width: 40px;
         height: 40px;
         font-size: 1rem;
+    }
+
+    .certifications-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .cert-card {
+        min-height: auto;
+        padding: 1rem;
     }
 }
 
