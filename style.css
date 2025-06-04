@@ -866,10 +866,190 @@ body {
     color: white;
 }
 
+/* 프로젝트 카드 스타일 */
+.project-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* 프로젝트 헤더 - 기간을 우측 상단에 배치 */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.project-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+    padding-right: 1rem;
+}
+
+/* 프로젝트 메타 정보 (기간, 팀 크기)를 우측 상단에 */
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.duration {
+    color: var(--primary-color);
+    font-weight: 600;
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+}
+
+.team-size {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* 프로젝트 본문 */
+.project-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* 기술 스택 태그들 */
+.tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.stack-item {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+/* 특정 기술에 대한 색상 */
+.stack-item.django {
+    background: #092e20;
+    color: white;
+}
+
+.stack-item.react {
+    background: #61dafb;
+    color: #20232a;
+}
+
+.stack-item.python {
+    background: #3776ab;
+    color: white;
+}
+
+.stack-item.aws {
+    background: #ff9900;
+    color: white;
+}
+
+/* 프로젝트 통계 - 한 줄에 2개씩 간결하게 */
+.project-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.stat-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* GitHub 링크 - 아이콘만으로 간결하게 */
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--text-primary);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    align-self: flex-end;
+}
+
+.github-link:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* 프로젝트 하단 영역 */
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .portfolio-item {
