@@ -380,9 +380,6 @@ function validateAndSendEmail(event) {
     // 메일 클라이언트 열기
     window.location.href = mailtoLink;
     
-    // 성공 메시지 표시
-    alert('메일 클라이언트가 열렸습니다. 메시지를 확인하고 전송해주세요.');
-    
     // 폼 초기화
     document.getElementById('contact-form').reset();
     
