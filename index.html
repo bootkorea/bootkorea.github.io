@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Bu-seung So">
+    <meta name="description" content="Bu-seung So의 포트폴리오 - Software Engineer, Computer Vision Researcher, Data Scientist">
+    <title>Bu-seung So | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/assets/duck.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="preloader" class="preloader">
+        <div class="preloader-content">
+            <div class="loading-text">
+                <span class="loading-percentage">0%</span>
+                <p></p>
+                <h2>Loading...</h2>
+                <p><br></p>
+                <p></p>
+            </div>
+            <div class="loader-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-container" class="main-container hidden">
+        <header class="header">
+            <div class="header-container">
+                <div class="logo">
+                    <h2 id="logo-home">bootkorea</h2>
+                </div>
+                <nav class="navigation">
+                    <ul class="nav-menu">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                        <li><a href="#resume" class="nav-link">Resume</a></li>
+                        </ul>
+                    <div class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section id="home" class="page-section">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">bootkorea</h1>
+                        <p class="hero-subtitle">신입 Software Engieer, Product Manager</p>
+                        <a href="#portfolio" class="btn btn-primary">VIEW WORK</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="page-section">
+                <div class="about-container">
+                    <div class="about-section">
+                        <h2>Overview</h2>
+                        <div class="overview-content">
+                            <div class="profile-summary">
+                                <div class="profile-image-small">
+                                    <img src="assets/profile.jpg" alt="소부승 프로필" class="profile-picture-small">
+                                </div>
+                                <div class="profile-details">
+                                    <h3>소부승 (Bu-Seung So)</h3>
+                                    <p class="title">Software Engineer • Product Manager</p>
+                                    <p></p>
+                                    <p class="description">
+                                        다수의 B2B/B2G 프로젝트 경험과 실무 인턴십을 통해 축적된 역량을 바탕으로,<br>
+                                        개발·운영부터 서비스 기획까지 다방면의 역할을 수행할 수 있습니다.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-section">
+                        <h2>Education</h2>
+                        <div class="education-grid">
+                            <div class="education-item">
+                                <div class="education-header">
+                                    <h3>전북대학교 컴퓨터공학부</h3>
+                                    <span class="period">2019.03 - 2025.02</span>
+                                </div>
+                                <div class="company">Bachelor of Computer Science Engineering</div>
+                                <div class="responsibilities">
+                                    <div class="gpa-meter">
+                                        <div class="gpa-fill" style="width: 84.2%;"></div>
+                                        <span class="gpa-text">GPA 3.79/4.5 (131학점)</span>
+                                    </div>
+                                    <p class="achievement">
+                                        <span class="achievement-icon">📚</span>
+                                        주요 수강 과목: 운영체제(A+), 인공지능(A+), 클라우드컴퓨팅(A+), 알고리즘(A0)
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="education-item">
+                                <div class="education-header">
+                                    <h3>KT AIVLE School 5기 - AI개발자 Track</h3>
+                                    <span class="period">2024.02 - 2024.08 (840시간)</span>
+                                </div>
+                                <div class="company">KT</div>
+                                <div class="responsibilities">
+                                    <p class="achievement">
+                                        <span class="achievement-icon">🚀</span>
+                                        우수 교육생(Dean's List) 선정
+                                        <p><span class="achievement-icon">🏆</span>
+                                            빅프로젝트 Practical상 수상 (작품명: 디지털 트윈 기반 도시침수 스마트 대응 시스템)</p>
+                                    </p>
+                                    <p class="achievement">
+                                        <span class="achievement-icon">💻</span>
+                                        기술 스택: Python, PyTorch, django, React, AWS
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Experiences</h2>
+                        <div class="experiences-content">
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <h3>네이버클라우드 Product Manager (인턴십)</h3>
+                                    <span class="period">2025.07 ~ </span>
+                                </div>
+                                <p class="company">NAVER Cloud</p>
+                                <div class="responsibilities">
+                                    <p>CLOVA Studio Product Management</p>
+                                <div class="tech-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">Pandas</span>
+                                    <span class="tag">Prompt Engineering</span>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <h3>가비아 클라우드 서비스기획 · PM (인턴십)</h3>
+                                    <span class="period">2025.03 ~ 2025.05 (3개월)</span>
+                                </div>
+                                <p class="company">GABIA</p>
+                                <div class="responsibilities">
+                                    <p>Gen2 클라우드 서비스 기획 보조 및 QA 분석을 통한 UI/UX 개선안 도출</p>
+                                    <p>사용자 매뉴얼 작성과 도큐멘테이션 관리 수행</p>
+                                    <p>Figma와 Confluence를 활용한 프로토타이핑 및 협업</p>
+                                    <p class="achievement">
+                                        <span class="highlight">Gen2 서비스 UI/UX 개선안 제안</span> 및
+                                        <span class="highlight">사용자 도큐멘테이션 제작</span>
+                                    </p>
+                                <div class="tech-tags">
+                                    <span class="tag">Figma</span>
+                                    <span class="tag">Confluence</span>
+                                    <span class="tag">JIRA</span>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <h3>Litmus 플랫폼 리뉴얼 프로젝트 (외주)</h3>
+                                    <span class="period">2024.04 ~ 2024.08 (5개월)</span>
+                                </div>
+                                <p class="company">전북대학교 SW중심대학사업단</p>
+                                <div class="responsibilities">
+                                    <p>Django 기반 백엔드 아키텍처 설계 및 개발</p>
+                                    <p>교육용 Online Judge 시스템 기능 구현</p>
+                                    <p>클라우드 기반 SaaS 전환을 통한 운영 효율화</p>
+                                    <p>500+ 사용자 환경에서의 안정성 검증</p>
+                                </div>
+                                <div class="tech-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">django</span>
+                                    <span class="tag">OpenStack</span>
+                                    <span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Activities</h2>
+                        <div class="activities-content">
+                            <div class="activity-item" data-modal-target="vclab-modal" style="cursor: pointer;">
+                                <div class="activity-header">
+                                    <h3>VCLab@JBNU (Prof. Hyung-ki Kim)</h3>
+                                    <span class="activity-period">2022.10 ~ 2023.09</span>
+                                </div>
+                                <p>학부생 연구원(Deep Learning, Computer Vision)</p>
+                            </div>
+
+                            <div class="activity-item" data-modal-target="alps-modal" style="cursor: pointer;">
+                                <div class="activity-header">
+                                    <h3>ALPS@JBNU</h3>
+                                    <span class="activity-period">2021.12 ~ 2024.12</span>
+                                </div>
+                                <p>Vice President(2022), Core Member(2023 ~ 2024)</p>
+                            </div>
+
+                            <div class="activity-item" data-modal-target="hackathon-modal" style="cursor: pointer;">
+                                <div class="activity-header">
+                                    <h3>Global Hackathons</h3>
+                                    <span class="activity-period">2024 ~ 2025</span>
+                                </div>
+                                <p>Junction Asia 2025, HackSeoul 2024 참가</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Skills</h2>
+                        <div class="skills-content">
+                            <div class="skills-category">
+                                <h3>핵심 기술 스택</h3>
+                                <div class="skills-list">
+                                    <div class="skill-item">
+                                        <span class="skill-name">Python</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">C/C++</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">HTML/CSS/JS</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">JAVA</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 60%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills-category">
+                                <h3>클라우드 인프라</h3>
+                                <div class="skills-list">
+                                    <div class="skill-item">
+                                        <span class="skill-name">AWS</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">OpenStack</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Certifications</h2>
+                        <div class="certifications-container">
+                            <div class="cert-card">
+                                <img src="assets/aws-certified.png" alt="AWS Certified">
+                                <div class="cert-info">
+                                    <h3>AWS Certified Cloud Practitioner</h3>
+                                    <p class="issuer">Amazon Web Services</p>
+                                    <p class="date">2025.04 - 2028.04</p>
+                                </div>
+                            </div>
+                            
+                            <div class="cert-card">
+                                <img src="assets/sqld.png" alt="SQLD Certified">
+                                <div class="cert-info">
+                                    <h3>SQL Developer (SQLD)</h3>
+                                    <p class="issuer">한국데이터베이스진흥원</p>
+                                    <p class="date">2024.04</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-card">
+                                <img src="assets/topcit.jpg" alt="TOPCIT Level3">
+                                <div class="cert-info">
+                                    <h3>TOPCIT Level 3</h3>
+                                    <p class="issuer">정보통신기획평가원</p>
+                                    <p class="date">2023.10</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Awards</h2>
+                        <div class="activities-content">
+                             <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2024 컴퓨터인공지능학부 작품경진대회 대상</h3>
+                                    <span class="activity-period">2024.12</span>
+                                </div>
+                                <p>전북대학교 컴퓨터인공지능학부</p>
+                            </div>
+                             <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2024 전북대 ICPC 경시대회 은상</h3>
+                                    <span class="activity-period">2024.11</span>
+                                </div>
+                                <p>전북대학교 공과대학</p>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2024 인공지능 온라인 경진대회</h3>
+                                    <span class="activity-period">2024.06</span>
+                                </div>
+                                <p>Team Leader, Contributor</p>
+                                <p>• Won 2nd prize of the competition (Hosted by the JBNU SWUniv.)</p>
+                                <p>• Developed and fine-tuned a CNN-LSTM ensemble AI model for fake voice detection, achieving high accuracy (Public Score 1.0 / Private Score 0.99992)</p>
+                            </div>
+                             <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2023 컴퓨터인공지능학부 작품경진대회 대상</h3>
+                                    <span class="activity-period">2023.12</span>
+                                </div>
+                                <p>전북대학교 컴퓨터인공지능학부</p>
+                            </div>
+                             <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2023 전북대 ICPC 경시대회 은상</h3>
+                                    <span class="activity-period">2023.11</span>
+                                </div>
+                                <p>전북대학교 공과대학</p>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>제1회 오픈소스 SW 아이디어 해커톤</h3>
+                                    <span class="activity-period">2023.12</span>
+                                </div>
+                                <p>Team Leader, Contributor</p>
+                                <p>• Won 2nd prize of the competition (Hosted by the JBNU)</p>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-header">
+                                    <h3>2023 SW 캡스톤디자인 경진대회</h3>
+                                    <span class="activity-period">2023.12</span>
+                                </div>
+                                <p>Contributor</p>
+                                <p>• Won 1st prize of the competition (Hosted by the JBNU SWUniv)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" class="page-section">
+                <div class="portfolio-container">
+                    <div class="page-header">
+                        <h1>포트폴리오</h1>
+                        <p>참여한 주요 프로젝트를 소개합니다</p>
+                    </div>
+                    
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">전체</button>
+                        <button class="filter-btn" data-filter="web">웹 개발</button>
+                        <button class="filter-btn" data-filter="ai">AI/ML</button>
+                        <button class="filter-btn" data-filter="research">연구</button>
+                    </div>
+                    
+                    <div class="portfolio-grid">
+                        <div class="project-card" data-category="web" data-modal-target="litmus-modal">
+                            <div class="project-header">
+                                <h3>SW교육 플랫폼(Litmus) 리뉴얼 프로젝트</h3>
+                                <div class="project-meta">
+                                    <span class="duration">2024.04 - 2024.08</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    전북대학교 SW교육 플랫폼 'Litmus'의 보안 위협 및 기술 노후화로 인한 서비스 중단에 대응하여 수행한 외주 프로젝트
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">Django</span>
+                                    <span class="stack-item">OpenStack</span>
+                                    <span class="stack-item">MySQL</span>
+                                </div>
+                                <div class="project-footer">
+                                     <a href="https://litmus.jbnu.ac.kr/" class="link" target="_blank" rel="noopener">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-card" data-category="ai" data-modal-target="flood-dashboard-modal">
+                            <div class="project-header">
+                                <h3>디지털 트윈 기반 도시침수 스마트 대응 시스템</h3>
+                                <div class="project-meta">
+                                    <span class="duration">2024.08</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    실시간 강우 데이터와 디지털 트윈 기술을 활용하여 도시 침수 위험을 예측하고 시각화하는 대시보드 개발 프로젝트
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">React</span>
+                                    <span class="stack-item">UNET</span>
+                                    <span class="stack-item">AWS</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="https://github.com/AIVLE-AI-26/flood-dashboard" class="github-link" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="ai" data-modal-target="k-detect-modal">
+                            <div class="project-header">
+                                <h3>K-Detect: 교내 전동 킥보드 불법 이용 사례 탐지</h3>
+                                <div class="project-meta">
+                                    <span class="duration">2023.12</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    교내 CCTV를 활용하여 헬멧 미착용, 2인 탑승 등 전동 킥보드의 불법 이용 사례를 실시간으로 탐지하는 AI 솔루션
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">OpenCV</span>
+                                    <span class="stack-item">YOLO</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="https://github.com/bootkorea/K-Detect" class="github-link" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="web" data-modal-target="take-a-seat-modal">
+                            <div class="project-header">
+                                <h3>Take-A-Seat: AI 자동 출석 확인 웹서비스</h3>
+                                <div class="project-meta">
+                                    <span class="duration">2023.12</span>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    강의실에 설치된 카메라로 학생들의 얼굴을 인식하여 출석을 자동으로 처리하고, 관리 페이지에서 출결 현황을 시각화하는 웹서비스
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">Django</span>
+                                    <span class="stack-item">OpenCV</span>
+                                    <span class="stack-item">AWS</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="https://github.com/bootkorea/Take-A-Seat" class="github-link" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="ai" data-modal-target="lx-modal">
+                            <div class="project-header">
+                                <h3>고정밀 영상을 활용한 소하천 불법 점용 탐지 기법 개발</h3>
+                                <div class="project-meta">
+                                    <p><span class="duration">2023.09 - 2023.12</span></p>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    하천 부지의 불법 점유·점용을 빠르게 탐지하는 최초의 SW 기법 개발 프로젝트 (with 한국국토정보공사(LX))
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">PyTorch</span>
+                                    <span class="stack-item">W&B</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="https://github.com/bootkorea/JBNU_Capstone-2023" class="github-link" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="ai" data-modal-target="pnid-modal">
+                            <div class="project-header">
+                                <h3>디지털 P&ID 인식 성능 향상</h3>
+                                <div class="project-meta">
+                                    <p><span class="duration">2023.05 - 2023.09</span></p>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    Visual Computing Lab@JBNU 소속으로 수행한 산학협력 프로젝트 (with 현대엔지니어링, 고려대학교 外)
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">Python</span>
+                                    <span class="stack-item">PyTorch</span>
+                                    <span class="stack-item">W&B</span>
+                                </div>
+                                <div class="project-footer">
+                                    <a href="https://github.com/bootkorea/PNID_big_symbol" class="github-link" target="_blank" rel="noopener">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="research" data-modal-target="kcc2025-modal">
+                            <div class="project-header">
+                                <h3>오픈소스 기반 대학 SW 교육용 과제 채점 시스템 리뉴얼·운영</h3>
+                                <div class="project-meta">
+                                    <p><span class="duration">2025.06</span></p>
+                                </div>
+                            </div>
+                            <div class="project-body">
+                                <p class="project-description">
+                                    오픈소스 기반 대학 SW 교육용 과제 채점 시스템 리뉴얼·운영을 통한 교육 플랫폼 설계·운영 방법론 제시 (3저자)
+                                </p>
+                                <div class="tech-stack">
+                                    <span class="stack-item">KCC2025</span>
+                                    <span class="stack-item">학술논문</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resume" class="page-section">
+                <div class="resume-container">
+                    <div class="page-header">
+                        <h1>Resume</h1>
+                        <p>영문 Resume를 확인하세요</p>
+                        <a href="./assets/resume.pdf" download class="btn btn-primary">
+                            <i class="fas fa-download"></i> 다운로드
+                        </a>
+                    </div>
+                    <div class="resume-content">
+                        <div class="resume-sidebar">
+                            <div class="resume-section">
+                                <h3>기술 스택</h3>
+                                <div class="skills-list">
+                                    <div class="skill-item">
+                                        <span class="skill-name">Python</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">C/C++</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">PyTorch</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">Tensorflow</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">OpenStack</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">AWS</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-item">
+                                        <span class="skill-name">django</span>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p></p>
+                            <div class="resume-section">
+                                <h3>언어 (Language)</h3>
+                                <div class="languages">
+                                    <div class="language-item">
+                                        <span>한국어</span>
+                                        <span class="level">Native</span>
+                                    </div>
+                                    <div class="language-item">
+                                        <span>English</span>
+                                        <span class="level">Intermediate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="resume-main">
+                            <div class="resume-viewer">
+                                <object data="assets/resume.pdf" type="application/pdf" width="100%" height="800px">
+                                    <iframe src="assets/resume.pdf" width="100%" height="800px">
+                                        <p>PDF를 표시할 수 없습니다. <a href="assets/resume.pdf">다운로드</a></p>
+                                    </iframe>
+                                </object>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
