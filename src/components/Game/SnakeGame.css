@@ -1,0 +1,115 @@
+.snake-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+}
+
+.game-header {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.score-display {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: monospace;
+}
+
+.game-board {
+    position: relative;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    overflow: hidden;
+}
+
+.snake-segment {
+    position: absolute;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+.food {
+    position: absolute;
+    background-color: #22c55e;
+    /* Green */
+    border-radius: 50%;
+}
+
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 15px;
+}
+
+.start-btn,
+.restart-btn {
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.start-btn:hover,
+.restart-btn:hover {
+    transform: scale(1.05);
+}
+
+.instructions {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.save-score-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.save-score-form input {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-family: monospace;
+}
+
+.save-score-form button {
+    padding: 5px 15px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.save-score-form button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.saved-msg {
+    color: #22c55e;
+    font-weight: bold;
+}
