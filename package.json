@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && cp dist/index.html ./ && cp -r dist/assets ./",
+    "deploy": "git add . && git commit -m 'Deploy' && git push origin main"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
