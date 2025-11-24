@@ -1,19 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/assets/duck.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Bu-seung So">
-    <meta name="description" content="Bu-seung So의 포트폴리오 - Software Engineer, Computer Vision Researcher, Data Scientist">
-    <title>Bu-seung So | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-5pjdqNM6.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CYPIWDfu.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/assets/duck.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Bu-seung So">
+  <meta name="description" content="Bu-seung So의 포트폴리오 - Software Engineer, Computer Vision Researcher, Data Scientist">
+  <title>Bu-seung So | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Handle redirects from 404.html for SPA routing
+    (function () {
+      var redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-3bs5TV-i.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D-_1uCXn.css">
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
