@@ -27,3 +27,5 @@ dist-ssr
 
 # Keep root assets for deployment (built files)
 # !assets/
+sendbird_setup_guide.md
+.env

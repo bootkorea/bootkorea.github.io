@@ -7,8 +7,8 @@ const Game = () => {
   return (
     <div className="game-page-container">
       <div className="container">
-        <h1 className="game-title">Enjoy & Relax</h1>
-        <p className="game-subtitle">Take a break and play a classic game of Snake!</p>
+        <h1 className="game-title">찾아주셔서 감사합니다</h1>
+        <p className="game-subtitle">잠깐 쉬어가며 미니게임을 즐겨보세요!</p>
         
         <div className="game-layout">
           <div className="game-section">

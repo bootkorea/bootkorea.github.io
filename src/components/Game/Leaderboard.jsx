@@ -23,9 +23,9 @@ const Leaderboard = () => {
 
   return (
     <div className="leaderboard-container">
-      <h3>🏆 Hall of Fame</h3>
+      <h3>🏆 순위표</h3>
       {scores.length === 0 ? (
-        <p className="no-scores">No scores yet. Be the first!</p>
+        <p className="no-scores">아직 기록이 없습니다. 첫 번째 도전자가 되어보세요!</p>
       ) : (
         <ul className="score-list">
           {scores.map((entry, index) => (

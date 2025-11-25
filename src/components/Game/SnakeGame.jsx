@@ -139,7 +139,7 @@ const SnakeGame = () => {
   return (
     <div className="snake-game-container">
       <div className="game-header">
-        <div className="score-display">Score: {score}</div>
+        <div className="score-display">점수: {score}</div>
       </div>
 
       <div className="game-board" style={{ width: GRID_SIZE * CELL_SIZE, height: GRID_SIZE * CELL_SIZE }}>
@@ -167,32 +167,32 @@ const SnakeGame = () => {
         
         {!isPlaying && !gameOver && (
           <div className="game-overlay">
-            <button className="start-btn" onClick={startGame}>Start Game</button>
-            <p className="instructions">Use Arrow Keys to Move</p>
+            <button className="start-btn" onClick={startGame}>게임 시작</button>
+            <p className="instructions">방향키로 이동하세요</p>
           </div>
         )}
 
         {gameOver && (
           <div className="game-overlay">
-            <h2>Game Over!</h2>
-            <p>Your Score: {score}</p>
+            <h2>게임 오버!</h2>
+            <p>당신의 점수: {score}</p>
             
             {!highScoreSaved ? (
               <div className="save-score-form">
                 <input
                   type="text"
-                  placeholder="Enter your name"
+                  placeholder="이름을 입력하세요"
                   value={playerName}
                   onChange={(e) => setPlayerName(e.target.value)}
                   maxLength={10}
                 />
-                <button onClick={saveScore} disabled={!playerName.trim()}>Save Score</button>
+                <button onClick={saveScore} disabled={!playerName.trim()}>점수 저장</button>
               </div>
             ) : (
-              <p className="saved-msg">Score Saved!</p>
+              <p className="saved-msg">점수가 저장되었습니다!</p>
             )}
             
-            <button className="restart-btn" onClick={resetGame}>Play Again</button>
+            <button className="restart-btn" onClick={resetGame}>다시 하기</button>
           </div>
         )}
       </div>
