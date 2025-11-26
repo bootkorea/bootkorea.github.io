@@ -6,6 +6,9 @@
     padding: 20px;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .game-header {
@@ -21,12 +24,28 @@
     font-family: monospace;
 }
 
+.game-board-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .game-board {
     position: relative;
     background-color: #f0f0f0;
     border: 2px solid #333;
     overflow: hidden;
+    touch-action: none;
+    /* Prevent scrolling while swiping */
 }
+
+/* Make segments and food responsive using percentages if needed, 
+   but for now we are scaling the container or using fixed size with transform.
+   A better approach for simple responsiveness without rewriting logic is using CSS transform scale 
+   or just ensuring the container fits. 
+   Given the fixed pixel logic in JS (CELL_SIZE = 20), we might need to use transform: scale() for mobile.
+*/
 
 .snake-segment {
     position: absolute;
@@ -54,6 +73,7 @@
     align-items: center;
     color: white;
     gap: 15px;
+    z-index: 10;
 }
 
 .start-btn,
@@ -112,4 +132,52 @@
 .saved-msg {
     color: #22c55e;
     font-weight: bold;
+}
+
+/* Mobile Controls */
+.mobile-controls {
+    display: none;
+    /* Hidden by default on desktop */
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.control-row {
+    display: flex;
+    gap: 10px;
+}
+
+.control-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.control-btn:active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: flex;
+    }
+
+    /* Adjust container padding for mobile */
+    .snake-game-container {
+        padding: 10px;
+    }
 }
