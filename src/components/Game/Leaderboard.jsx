@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { subscribeToTopScores } from '../../config/firebase';
 import './Leaderboard.css';
 
 const Leaderboard = () => {
   const [scores, setScores] = useState([]);
 
-  const loadScores = () => {
-    const savedScores = JSON.parse(localStorage.getItem('snake_scores') || '[]');
-    setScores(savedScores);
-  };
-
   useEffect(() => {
-    loadScores();
+    // Subscribe to Firebase updates
+    const unsubscribe = subscribeToTopScores((newScores) => {
+      setScores(newScores);
+    });
 
-    // Listen for storage updates (from SnakeGame component)
-    const handleStorageChange = () => {
-      loadScores();
-    };
-
-    window.addEventListener('storage', handleStorageChange);
-    return () => window.removeEventListener('storage', handleStorageChange);
+    // Cleanup subscription on unmount
+    return () => unsubscribe();
   }, []);
 
   return (

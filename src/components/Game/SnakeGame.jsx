@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { saveScoreToFirebase } from '../../config/firebase';
 import './SnakeGame.css';
 
 const GRID_SIZE = 20;
@@ -45,10 +46,15 @@ const SnakeGame = () => {
     setDirection({ x: 1, y: 0 }); // Start moving right
   };
 
-  const saveScore = () => {
+  const saveScore = async () => {
     if (!playerName.trim()) return;
     
     const newScore = { name: playerName, score, date: new Date().toISOString() };
+    
+    // Save to Firebase
+    await saveScoreToFirebase(newScore);
+    
+    // Also save to localStorage for backup/offline support
     const existingScores = JSON.parse(localStorage.getItem('snake_scores') || '[]');
     const updatedScores = [...existingScores, newScore]
       .sort((a, b) => b.score - a.score)
@@ -57,7 +63,7 @@ const SnakeGame = () => {
     localStorage.setItem('snake_scores', JSON.stringify(updatedScores));
     setHighScoreSaved(true);
     
-    // Trigger a custom event so Leaderboard can update
+    // Trigger a custom event so Leaderboard can update (if it's listening to storage)
     window.dispatchEvent(new Event('storage'));
   };
 
