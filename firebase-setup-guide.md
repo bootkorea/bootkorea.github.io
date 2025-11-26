@@ -71,19 +71,7 @@
 
 3. **설정 정보 복사**
    - Firebase SDK 스니펫에서 **"구성"** 탭 선택
-   - 다음 정보를 복사해두세요:
-
-```javascript
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-```
+   - 다음 정보를 복사해두세요
 
 ## 4단계: 환경 변수 설정
 
