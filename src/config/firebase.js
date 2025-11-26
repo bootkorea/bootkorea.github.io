@@ -26,12 +26,21 @@ let database = null;
 
 if (isFirebaseConfigured()) {
   try {
+    console.warn('[Firebase] Attempting to initialize...');
+    console.warn('[Firebase] Config:', {
+      projectId: firebaseConfig.projectId,
+      authDomain: firebaseConfig.authDomain,
+      databaseURL: firebaseConfig.databaseURL
+    });
     app = initializeApp(firebaseConfig);
     database = getDatabase(app);
-    console.log('[Firebase] Successfully initialized');
+    console.log('[Firebase] Successfully initialized app and database');
   } catch (error) {
-    console.warn('[Firebase] Initialization failed, falling back to localStorage:', error.message);
+    console.error('[Firebase] Initialization CRITICAL FAILURE:', error);
   }
+} else {
+  console.warn('[Firebase] Configuration MISSING or INCOMPLETE. Check .env file.');
+  console.log('[Firebase] Current Config State:', firebaseConfig);
 }
 
 /**
@@ -80,10 +89,10 @@ export const subscribeToTopScores = (callback) => {
         });
       });
       
-      // Sort by score descending and take top 10
+      // Sort by score descending and take top 7
       const topScores = scores
         .sort((a, b) => b.score - a.score)
-        .slice(0, 10);
+        .slice(0, 7);
       
       callback(topScores);
     };

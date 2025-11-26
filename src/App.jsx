@@ -24,6 +24,8 @@ const AnimatedRoutes = () => {
   );
 };
 
+import FirebaseStatus from './components/FirebaseStatus';
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
@@ -60,6 +62,7 @@ function App() {
             <>
               <ChatbotWidget isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
               <ChatbotButton onClick={toggleChatbot} isOpen={isChatbotOpen} />
+              <FirebaseStatus />
             </>
           )}
         </div>

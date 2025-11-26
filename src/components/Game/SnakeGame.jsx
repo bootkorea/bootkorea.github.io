@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { saveScoreToFirebase } from '../../config/firebase';
 import './SnakeGame.css';
 
@@ -9,6 +10,7 @@ const INITIAL_DIRECTION = { x: 0, y: 0 };
 const GAME_SPEED = 100;
 
 const SnakeGame = () => {
+  const { language } = useLanguage();
   const [snake, setSnake] = useState(INITIAL_SNAKE);
   const [food, setFood] = useState({ x: 15, y: 15 });
   const [direction, setDirection] = useState(INITIAL_DIRECTION);
@@ -54,13 +56,13 @@ const SnakeGame = () => {
     // Save to Firebase
     await saveScoreToFirebase(newScore);
     
-    // Also save to localStorage for backup/offline support
-    const existingScores = JSON.parse(localStorage.getItem('snake_scores') || '[]');
-    const updatedScores = [...existingScores, newScore]
-      .sort((a, b) => b.score - a.score)
-      .slice(0, 10); // Keep top 10
+    // 2. Save to LocalStorage (DISABLED: User requested Firebase only)
+    // const existingScores = JSON.parse(localStorage.getItem('snake_scores') || '[]');
+    // const updatedScores = [...existingScores, newScore]
+    //   .sort((a, b) => b.score - a.score)
+    //   .slice(0, 10); // Keep top 10
       
-    localStorage.setItem('snake_scores', JSON.stringify(updatedScores));
+    // localStorage.setItem('snake_scores', JSON.stringify(updatedScores));
     setHighScoreSaved(true);
     
     // Trigger a custom event so Leaderboard can update (if it's listening to storage)
@@ -145,7 +147,7 @@ const SnakeGame = () => {
   return (
     <div className="snake-game-container">
       <div className="game-header">
-        <div className="score-display">점수: {score}</div>
+        <div className="score-display">{language === 'kr' ? '점수:' : 'Score:'} {score}</div>
       </div>
 
       <div className="game-board" style={{ width: GRID_SIZE * CELL_SIZE, height: GRID_SIZE * CELL_SIZE }}>
@@ -173,32 +175,44 @@ const SnakeGame = () => {
         
         {!isPlaying && !gameOver && (
           <div className="game-overlay">
-            <button className="start-btn" onClick={startGame}>게임 시작</button>
-            <p className="instructions">방향키로 이동하세요</p>
+            <button className="start-btn" onClick={startGame}>
+              {language === 'kr' ? '게임 시작' : 'Start Game'}
+            </button>
+            <p className="instructions">
+              {language === 'kr' ? '방향키로 이동하세요' : 'Use arrow keys to move'}
+            </p>
           </div>
         )}
 
         {gameOver && (
           <div className="game-overlay">
-            <h2>게임 오버!</h2>
-            <p>당신의 점수: {score}</p>
+            <h2>{language === 'kr' ? '게임 오버!' : 'Game Over!'}</h2>
+            <p>{language === 'kr' ? '당신의 점수:' : 'Your Score:'} {score}</p>
             
             {!highScoreSaved ? (
               <div className="save-score-form">
                 <input
                   type="text"
-                  placeholder="이름을 입력하세요"
+                  id="playerName"
+                  name="playerName"
+                  placeholder={language === 'kr' ? '이름을 입력하세요' : 'Enter your name'}
                   value={playerName}
                   onChange={(e) => setPlayerName(e.target.value)}
                   maxLength={10}
                 />
-                <button onClick={saveScore} disabled={!playerName.trim()}>점수 저장</button>
+                <button onClick={saveScore} disabled={!playerName.trim()}>
+                  {language === 'kr' ? '점수 저장' : 'Save Score'}
+                </button>
               </div>
             ) : (
-              <p className="saved-msg">점수가 저장되었습니다!</p>
+              <p className="saved-msg">
+                {language === 'kr' ? '점수가 저장되었습니다!' : 'Score saved!'}
+              </p>
             )}
             
-            <button className="restart-btn" onClick={resetGame}>다시 하기</button>
+            <button className="restart-btn" onClick={resetGame}>
+              {language === 'kr' ? '다시 하기' : 'Play Again'}
+            </button>
           </div>
         )}
       </div>
